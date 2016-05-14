@@ -14,19 +14,22 @@ class CreateIssuesTable extends Migration
     {
         Schema::create('issues', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('project_id')->unsigned();
             $table->integer('number')->unsigned();
-            $table->string('status', 255)->default('open');
-            $table->string('title', 255);
+            $table->string('status')->default('open');
+            $table->string('title');
             $table->text('body')->nullable();
             $table->integer('user_id')->unsigned();
-            $table->integer('assignee_id')->unsigned();
-            $table->integer('milestone_id')->unsigned();
+            $table->integer('assignee_id')->unsigned()->nullable();
+            $table->integer('milestone_id')->unsigned()->nullable();
             $table->boolean('locked');
             $table->dateTime('closed_at')->nullable();
             $table->timestamps();
             
+            $table->foreign('project_id')->references('id')->on('projects');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('assignee_id')->references('id')->on('users');
+            $table->foreign('milestone_id')->references('id')->on('milestones');
         });
     }
 
