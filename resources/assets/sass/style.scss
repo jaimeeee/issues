@@ -1,0 +1,131 @@
+@import "bourbon";
+
+$max-width: 984px;
+@import "neat";
+
+/**
+ * Responsive
+ */
+
+
+
+/**
+ * Colors
+ */
+
+$color-primary: #70c21f;
+$color-border: #d8dee2;
+
+/**
+ * Fonts
+ */
+
+
+
+/**
+ * Global
+ */
+
+body {
+  background: white;
+  
+  &.logged-out {
+    background: #f9f9f9;
+  }
+}
+
+.container {
+  @include outer-container;
+}
+
+.main-content {
+  overflow: hidden;
+}
+
+.btn-primary {
+  background-color: $color-primary;
+  border-color: darken($color-primary, 5%);
+  
+  &:hover {
+    background-color: darken($color-primary, 5%);
+    border-color: darken($color-primary, 10%);
+  }
+  
+  &:active, &:active:hover, &:active:focus {
+    background-color: darken($color-primary, 10%);
+    border-color: darken($color-primary, 15%);
+  }
+}
+
+/**
+ * Header
+ */
+
+#header {
+  &.logged-out {
+    height: 92px;
+    padding: 40px 0px 20px;
+    
+    .logo {
+      color: #333;
+      display: block;
+      font-size: 32px;
+      line-height: 32px;
+      height: 32px;
+      text-align: center;
+    }
+  }
+}
+
+/**
+ * Footer
+ */
+
+
+
+/**
+ * Login
+ */
+
+#login {
+  margin: 0px auto;
+  width: 340px;
+  
+  .login-header {
+    padding: 10px 0px;
+    margin-bottom: 15px;
+  }
+  
+  h1 {
+    letter-spacing: -0.5px;
+    font-size: 1.7em;
+    font-weight: 300;
+    margin: 0px;
+    text-align: center;
+  }
+  
+  .login-body {
+    background: white;
+    border: 1px solid $color-border;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: normal;
+    margin-bottom: 7px;
+    
+    a {
+      float: right;
+      font-size: 0.95em;
+    }
+  }
+  
+  .form-control {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    margin-top: 5px;
+  }
+}

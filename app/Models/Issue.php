@@ -11,7 +11,7 @@ class Issue extends Model
      */
     public function assignee()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Model\User');
     }
     
     /**
@@ -19,7 +19,7 @@ class Issue extends Model
      */
     public function comments()
     {
-        return $this->hasMany('App\Comment');
+        return $this->hasMany('App\Model\Comment');
     }
     
     /**
@@ -27,7 +27,7 @@ class Issue extends Model
      */
     public function events()
     {
-        return $this->hasMany('App\Event');
+        return $this->hasMany('App\Model\Event');
     }
     
     /**
@@ -35,7 +35,7 @@ class Issue extends Model
      */
     public function labels()
     {
-        return $this->belongsToMany('App\Label');
+        return $this->belongsToMany('App\Model\Label');
     }
     
     /**
@@ -43,7 +43,7 @@ class Issue extends Model
      */
     public function milestone()
     {
-        return $this->hasOne('App\Milestone');
+        return $this->hasOne('App\Model\Milestone');
     }
     
     /**
@@ -51,7 +51,7 @@ class Issue extends Model
      */
     public function project()
     {
-        return $this->belongsTo('App\Project');
+        return $this->belongsTo('App\Model\Project');
     }
     
     /**
@@ -59,6 +59,6 @@ class Issue extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Model\User');
     }
 }

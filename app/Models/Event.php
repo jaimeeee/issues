@@ -11,7 +11,7 @@ class Event extends Model
      */
     public function assignee()
     {
-        return $this->belongsTo('App\User', 'assignee_id');
+        return $this->belongsTo('App\Model\User', 'assignee_id');
     }
     
     /**
@@ -19,7 +19,7 @@ class Event extends Model
      */
     public function assigner()
     {
-        return $this->belongsTo('App\User', 'assigner_id');
+        return $this->belongsTo('App\Model\User', 'assigner_id');
     }
     
     /**
@@ -27,7 +27,7 @@ class Event extends Model
      */
     public function issue()
     {
-        $this->belongsTo('App\Issue');
+        $this->belongsTo('App\Model\Issue');
     }
     
     /**
@@ -35,7 +35,7 @@ class Event extends Model
      */
     public function label()
     {
-        return $this->belongsTo('App\Label');
+        return $this->belongsTo('App\Model\Label');
     }
     
     /**
@@ -43,7 +43,7 @@ class Event extends Model
      */
     public function milestone()
     {
-        return $this->belongsTo('App\Milestone');
+        return $this->belongsTo('App\Model\Milestone');
     }
     
     /**
@@ -51,6 +51,6 @@ class Event extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Model\User');
     }
 }
