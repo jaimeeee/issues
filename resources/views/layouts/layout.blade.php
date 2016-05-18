@@ -36,16 +36,28 @@
       </div>
       <div class="collapse navbar-collapse" id="app-navbar-collapse">
         <!-- Left Side Of Navbar -->
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav navbar-main">
           <li><a href="{{ url('/home') }}">Home</a></li>
         </ul>
         <!-- Right Side Of Navbar -->
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-              {{ Auth::user()->name }} <span class="caret"></span>
+              <span class="fa fa-plus"></span> <span class="caret"></span>
             </a>
             <ul class="dropdown-menu" role="menu">
+              <li><a href="{{ url('/') }}">New project</a></li>
+              <li><a href="{{ url('/') }}">New organization</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+              <img class="avatar" src="http://www.gravatar.com/avatar/{{ md5( strtolower( trim( Auth::user()->email ) ) ) }}"?s=40" alt="@{{ Auth::user()->username }}" width="20">
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li class="dropdown-header">{{ Auth::user()->name }}</li>
+              <li class="divider" role="separator"></li>
               <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
             </ul>
           </li>
