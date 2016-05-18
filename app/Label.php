@@ -11,7 +11,7 @@ class Label extends Model
      */
     public function events()
     {
-        return $this->hasMany('App\Model\Event');
+        return $this->hasMany('App\Event');
     }
     
     /**
@@ -19,7 +19,7 @@ class Label extends Model
      */
     public function issues()
     {
-        return $this->belongsToMany('App\Model\Issue');
+        return $this->belongsToMany('App\Issue');
     }
     
     /**
@@ -27,6 +27,6 @@ class Label extends Model
      */
     public function project()
     {
-        return $this->belongsTo('App\Model\Project');
+        return $this->belongsTo('App\Project');
     }
 }

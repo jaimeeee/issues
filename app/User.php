@@ -29,7 +29,7 @@ class User extends Authenticatable
      */
     public function assignedIssues()
     {
-        return $this->hasMany('App\Model\Issue', 'assignee_id', 'id');
+        return $this->hasMany('App\Issue', 'assignee_id', 'id');
     }
     
     /**
@@ -37,7 +37,7 @@ class User extends Authenticatable
      */
     public function comments()
     {
-        return $this->hasMany('App\Model\Comment');
+        return $this->hasMany('App\Comment');
     }
     
     /**
@@ -45,7 +45,7 @@ class User extends Authenticatable
      */
     public function events()
     {
-        return $this->hasMany('App\Model\Event');
+        return $this->hasMany('App\Event');
     }
     
     /**
@@ -53,7 +53,7 @@ class User extends Authenticatable
      */
     public function issues()
     {
-        return $this->hasMany('App\Model\Issue');
+        return $this->hasMany('App\Issue');
     }
     
     /**
@@ -61,7 +61,7 @@ class User extends Authenticatable
      */
     public function milestones()
     {
-        return $this->hasMany('App\Model\Milestone');
+        return $this->hasMany('App\Milestone');
     }
     
     /**
@@ -69,6 +69,6 @@ class User extends Authenticatable
      */
     public function projects()
     {
-        return $this->hasMany('App\Model\Project');
+        return $this->hasMany('App\Project');
     }
 }

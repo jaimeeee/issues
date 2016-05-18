@@ -11,7 +11,7 @@ class Milestone extends Model
      */
     public function events()
     {
-        return $this->hasMany('App\Model\Event');
+        return $this->hasMany('App\Event');
     }
     
     /**
@@ -19,7 +19,7 @@ class Milestone extends Model
      */
     public function issues()
     {
-        return $this->hasMany('App\Model\Issue');
+        return $this->hasMany('App\Issue');
     }
     
     /**
@@ -27,7 +27,7 @@ class Milestone extends Model
      */
     public function project()
     {
-        return $this->belongsTo('App\Model\Project');
+        return $this->belongsTo('App\Project');
     }
     
     /**
@@ -35,6 +35,6 @@ class Milestone extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\Model\User');
+        return $this->belongsTo('App\User');
     }
 }

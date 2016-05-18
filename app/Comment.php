@@ -11,7 +11,7 @@ class Comment extends Model
      */
     public function issue()
     {
-        $this->belongsTo('App\Model\Issue');
+        $this->belongsTo('App\Issue');
     }
     
     /**
@@ -19,6 +19,6 @@ class Comment extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\Model\User');
+        return $this->belongsTo('App\User');
     }
 }

@@ -11,7 +11,7 @@ class Project extends Model
      */
     public function issues()
     {
-        return $this->hasMany('App\Model\Issue');
+        return $this->hasMany('App\Issue');
     }
     
     /**
@@ -19,7 +19,7 @@ class Project extends Model
      */
     public function organization()
     {
-        return $this->belongsTo('App\Model\Organization');
+        return $this->belongsTo('App\Organization');
     }
     
     /**
@@ -27,6 +27,6 @@ class Project extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\Model\User');
+        return $this->belongsTo('App\User');
     }
 }
