@@ -43,6 +43,11 @@ body {
   overflow: hidden;
 }
 
+.content-slim {
+  @include shift(1);
+  @include span-columns(10);
+}
+
 .btn-primary {
   background-color: $color-primary;
   border-color: darken($color-primary, 5%);

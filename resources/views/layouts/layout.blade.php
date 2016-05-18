@@ -37,8 +37,8 @@
       <div class="collapse navbar-collapse" id="app-navbar-collapse">
         <!-- Left Side Of Navbar -->
         <ul class="nav navbar-nav navbar-main">
-          <li><a href="{{ url('/') }}">Projects</a></li>
-          <li><a href="{{ url('/issues') }}">Issues</a></li>
+          <li><a href="{{ url('/') }}">{{ trans('global.projects') }}</a></li>
+          <li><a href="{{ url('/issues') }}">{{ trans('global.issues') }}</a></li>
         </ul>
         <!-- Right Side Of Navbar -->
         <ul class="nav navbar-nav navbar-right">
@@ -47,8 +47,8 @@
               <span class="fa fa-plus"></span> <span class="caret"></span>
             </a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="{{ url('/') }}">New project</a></li>
-              <li><a href="{{ url('/') }}">New organization</a></li>
+              <li><a href="{{ url('/create') }}">{{ trans('global.new-project') }}</a></li>
+              <li><a href="{{ url('/') }}">{{ trans('global.new-organization') }}</a></li>
             </ul>
           </li>
           <li class="dropdown">
@@ -59,7 +59,8 @@
             <ul class="dropdown-menu" role="menu">
               <li class="dropdown-header">{{ Auth::user()->name }}</li>
               <li class="divider" role="separator"></li>
-              <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+              <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-cog"></i> {{ trans('global.settings') }}</a></li>
+              <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> {{ trans('global.logout') }}</a></li>
             </ul>
           </li>
         </ul>
