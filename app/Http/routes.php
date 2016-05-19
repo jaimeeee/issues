@@ -14,3 +14,20 @@
 Route::auth();
 
 Route::get('/', 'HomeController@index');
+
+/**
+ * Organizations
+ */
+
+Route::get('/organization/new', 'OrganizationsController@create');
+Route::post('/organization/new', 'OrganizationsController@saveOrganization');
+
+Route::get('/{organization}', 'OrganizationsController@organization')->where(['organization' => '[\w-.]+']);
+
+/**
+ * Projects
+ */
+Route::get('/new', 'ProjectsController@create');
+Route::post('/new', 'ProjectsController@saveProject');
+
+Route::get('/{organization}/{project}')->where(['organization' => '[\w-.]+', 'project' => '[\w-.]+']);
