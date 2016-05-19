@@ -9,14 +9,23 @@ use App\Http\Requests;
 
 class OrganizationsController extends Controller
 {
+	public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Show the organization list from the database
      * 
      * @return void
      */
-    public function index()
+    public function index(Request $request)
     {
-        $organizations = Organization::all();
+	    $query = $request->input(['q']);
+		if ($query){
+        	$organizations = Organization::AllFields($query)->get();
+        }else{
+	        $organizations = Organization::all();
+        }
         return view('home', ['organizations' => $organizations]);
     }
     

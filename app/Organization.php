@@ -13,4 +13,9 @@ class Organization extends Model
     {
         return $this->hasMany('App\Project');
     }
+    
+    public function scopeAllFields($query, $search)
+    {
+        return $query->where('name', 'like', '%'.$search.'%')->orWhere('company', 'like', '%'.$search.'%');
+    }
 }

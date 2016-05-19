@@ -6,11 +6,11 @@
 	  	
 		<div class="pagehead explore-head">		
 			<h1>
-				<a class="pagehead-heading" href="/explore">Explore proyectos</a>
+				<a class="pagehead-heading" href="/explore">Explore projects</a>
 			</h1>
 		</div>
 		<div class="sort-bar">
-			<form accept-charset="UTF-8" action="/stars" data-pjax="true" method="get">
+			<form accept-charset="UTF-8" method="get">
 				<input type="text" name="q" value="" class="form-control" placeholder="Search organization's" aria-label="Search organization's" autocapitalize="off" autocomplete="off" />
 			</form>
 		</div>
