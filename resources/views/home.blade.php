@@ -6,14 +6,9 @@
 	  	
 		<div class="pagehead explore-head">		
 			<h1>
-				<a class="pagehead-heading" href="/explore">Explore GitHub</a>
+				<a class="pagehead-heading" href="/explore">Explore proyectos</a>
 			</h1>
 		</div>
-	  	
-	  	
-	  	
-	  	
-	  	
 		<div class="sort-bar">
 			<form accept-charset="UTF-8" action="/stars" data-pjax="true" method="get">
 				<input type="text" name="q" value="" class="form-control" placeholder="Search organization's" aria-label="Search organization's" autocapitalize="off" autocomplete="off" />
@@ -24,7 +19,7 @@
 			<li class="list-item">
 			
 				<h3 class="list-name">
-					<a href="{{ url(strtolower($organization->name)) }}"><span class="prefix">{{ $organization->company }}</span></a>
+					<a href="{{ url(strtolower(str_slug($organization->name))) }}"><span class="prefix">{{ $organization->company }}</span></a>
 				</h3>
 			
 				<p class="repo-list-description">{{ $organization->description }}</p>
