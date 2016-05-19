@@ -17,15 +17,4 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-
-    /**
-     * Show the organization list from the database
-     * 
-     * @return void
-     */
-    public function index()
-    {
-	    $organizations = Organization::all();
-        return view('home', ['organizations' => $organizations]);
-    }
 }

@@ -13,7 +13,7 @@
 
 Route::auth();
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'OrganizationsController@index');
 
 /**
  * Organizations

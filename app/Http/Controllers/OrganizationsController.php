@@ -10,6 +10,17 @@ use App\Http\Requests;
 class OrganizationsController extends Controller
 {
     /**
+     * Show the organization list from the database
+     * 
+     * @return void
+     */
+    public function index()
+    {
+        $organizations = Organization::all();
+        return view('home', ['organizations' => $organizations]);
+    }
+    
+    /**
      * Shows the form to create a new organization
      * 
      * @return void
