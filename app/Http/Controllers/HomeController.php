@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Organization;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -18,12 +19,13 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application index.
-     *
-     * @return \Illuminate\Http\Response
+     * Show the organization list from the database
+     * 
+     * @return void
      */
     public function index()
     {
-        return view('home');
+	    $organizations = Organization::all();
+        return view('home', ['organizations' => $organizations]);
     }
 }
