@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Organization;
 use App\Http\Requests;
 
 class OrganizationsController extends Controller
@@ -13,9 +14,11 @@ class OrganizationsController extends Controller
      * 
      * @return void
      */
-    public function new()
+    public function create()
     {
-        
+        return view('organization-create', [
+                        'title' => 'Create an organization',
+                    ]);
     }
     
     /**
@@ -25,7 +28,22 @@ class OrganizationsController extends Controller
      */
     public function saveOrganization(Request $request)
     {
+        $this->validate($request, [
+                'name' => 'required|regex:/^[\w-.]+$/|max:255',
+                'company' => 'required|max:255',
+            ]);
         
+        $organization = new Organization;
+        
+        $organization->name = $request->input('name');
+        $organization->company = $request->input('company');
+        $organization->website = $request->input('website');
+        $organization->location = $request->input('location');
+        $organization->description = $request->input('description');
+        
+        $organization->save();
+        
+        return redirect('/' . $organization->name);
     }
     
     /**
@@ -35,6 +53,6 @@ class OrganizationsController extends Controller
      */
     public function organization($organization)
     {
-        
+        $organization = Organization::where('name', $organization)->firstOrFail();
     }
 }

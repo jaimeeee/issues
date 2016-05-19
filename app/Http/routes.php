@@ -22,12 +22,14 @@ Route::get('/', 'HomeController@index');
 Route::get('/organization/new', 'OrganizationsController@create');
 Route::post('/organization/new', 'OrganizationsController@saveOrganization');
 
-Route::get('/{organization}', 'OrganizationsController@organization')->where(['organization' => '[\w-.]+']);
-
 /**
  * Projects
  */
 Route::get('/new', 'ProjectsController@create');
 Route::post('/new', 'ProjectsController@saveProject');
 
+/**
+ * Dynamic routes
+ */
+Route::get('/{organization}', 'OrganizationsController@organization')->where(['organization' => '[\w-.]+']);
 Route::get('/{organization}/{project}')->where(['organization' => '[\w-.]+', 'project' => '[\w-.]+']);

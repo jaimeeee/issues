@@ -47,8 +47,8 @@
               <span class="fa fa-plus"></span> <span class="caret"></span>
             </a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="{{ url('/create') }}">{{ trans('global.new-project') }}</a></li>
-              <li><a href="{{ url('/') }}">{{ trans('global.new-organization') }}</a></li>
+              <li><a href="{{ url('/new') }}">{{ trans('global.new-project') }}</a></li>
+              <li><a href="{{ url('/organization/new') }}">{{ trans('global.new-organization') }}</a></li>
             </ul>
           </li>
           <li class="dropdown">
