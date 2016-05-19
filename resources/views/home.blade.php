@@ -1,14 +1,15 @@
 @extends('layouts.layout')
 @section('content')
   <div role="main" class="main-content">
-    <div class="container">
-      <div class="content-list">
-	  	
-		<div class="pagehead explore-head">		
+	  <div class="pagehead explore-head">
+		  <div class="container">
 			<h1>
 				<a class="pagehead-heading" href="/explore">Explore projects</a>
 			</h1>
+		  </div>
 		</div>
+    <div class="container">
+      <div class="content-list">
 		<div class="sort-bar">
 			<form accept-charset="UTF-8" method="get">
 				<input type="text" name="q" value="" class="form-control" placeholder="Search organization's" aria-label="Search organization's" autocapitalize="off" autocomplete="off" />
